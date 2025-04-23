@@ -2,7 +2,7 @@ create database HospitalManagementSystem;
 use HospitalManagementSystem;
 
 --execute previous chunk of code
-
+go
 create table Patients(
 	patient_id int identity (100000,2) primary key NOT NULL,
 	patient_name varchar(256) NOT NULL,
@@ -15,7 +15,7 @@ create table Specializations(
 );
 
 --execute previous chunk of code
-
+go
 create table Doctors(
 	doctor_id int identity (100001,2) primary key NOT NULL,
 	doctor_name varchar(256) NOT NULL,
@@ -44,7 +44,7 @@ create table Appointments(
 );
 
 --execute previous chunk of code
-
+go
 create table DiagnosisAndTreatment(
 	id int identity (10001,2) primary key NOT NULL,
 	appointment_id int not null,
@@ -57,7 +57,7 @@ create table DiagnosisAndTreatment(
 );
 
 --execute previous chunk of code
-
+go
 create table MedicalHistory(
 	history_id int identity(50000,1) primary key,
 	diagnosis_id int references DiagnosisAndTreatment(id)
@@ -66,7 +66,7 @@ create table MedicalHistory(
 );
 
 --execute previous chunk of code
-
+go
 alter table Patients
 add patient_medicalHistory_id int
 	constraint fk_medicalHistory
